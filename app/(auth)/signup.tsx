@@ -74,14 +74,11 @@ const CreateAccount = () => {
         contentContainerStyle={{ flexGrow: 1 }}
         keyboardShouldPersistTaps="handled"
       >
-        <View className="p-6 z-10 absolute mt-14 w-full h-full">
+        <View className="p-6 mt-14 w-full flex-1">
           <Image source={image.logo} />
           <View className="pt-8 flex-1">
-            <Text className="text-2xl font-normal text-general mb-2">
-              Create a new account
-            </Text>
-            <Text className="mb-6">
-              Please put your information below to create a new account
+            <Text className="text-2xl font-medium text-general">
+              Create Account
             </Text>
 
             {/* Name Input */}
@@ -140,14 +137,13 @@ const CreateAccount = () => {
               render={({ field: { onChange, value } }) => (
                 <CustomSelect
                   title="Gender"
-                  value={value}
-                  onchange={(val) => onChange(val)}
-                  error={errors.gender?.message}
+                  value={getValues("gender")}
+                  onchange={(val) => setValue("gender", val)}
                   data={[
-                    { label: "Male", value: "Male" },
-                    { label: "Female", value: "Female" },
-                    { label: "Other", value: "Other" },
+                    { label: "Male", value: "male" },
+                    { label: "Female", value: "female" },
                   ]}
+                  error={errors.gender?.message}
                 />
               )}
             />
@@ -183,17 +179,15 @@ const CreateAccount = () => {
                 />
               )}
             />
-
             <CustomButton
               title="Create Account"
               handlePress={handleSubmit(onSubmit)}
-              containerStyles="bg-[#008543] mt-7 mb-10"
+              containerStyles="bg-[#008543] mt-16"
               textStyles="text-white"
             />
           </View>
         </View>
       </ScrollView>
-      
     </KeyboardAvoidingView>
   );
 };

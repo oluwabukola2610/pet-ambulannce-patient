@@ -58,10 +58,7 @@ const Login = () => {
         source={image.plainbg}
         style={{ position: "absolute", width: "100%", height: "100%" }}
       />
-      <ScrollView
-        contentContainerStyle={{ flexGrow: 1 }}
-        keyboardShouldPersistTaps="handled"
-      >
+   
         <View className="p-6 pt-16 w-full flex-1">
           <Image source={image.logo} className="mb-8" />
 
@@ -123,7 +120,6 @@ const Login = () => {
             </View>
           </View>
         </View>
-      </ScrollView>
       {/* Submit Button */}
       <View className="p-6">
         <CustomButton
