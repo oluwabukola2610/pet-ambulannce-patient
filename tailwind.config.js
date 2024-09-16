@@ -3,14 +3,7 @@ module.exports = {
   content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        OpenSans: ["OpenSans", "sans-serif"],
-        OpenSansBold: ["OpenSans-Bold", "sans-serif"],
-        OpenSansExtraBold: ["OpenSans-ExtraBold", "sans-serif"],
-        OpenSansLight: ["OpenSans-Light", "sans-serif"],
-        OpenSansMedium: ["OpenSans-Medium", "sans-serif"],
-        OpenSansSemiBold: ["OpenSans-SemiBold", "sans-serif"],
-      },
+  
       colors: {
         success: {
           100: "#F0FFF4",
