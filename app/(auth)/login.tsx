@@ -10,7 +10,7 @@ import {
 import { useForm, Controller } from "react-hook-form";
 import { image } from "@/constants";
 import CustomInput from "@/components/CustomInput";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import Checkbox from "expo-checkbox";
 import CustomButton from "@/components/CustomButton";
 
@@ -47,6 +47,7 @@ const Login = () => {
 
   const onSubmit = (data: any) => {
     console.log("Form Data:", data);
+    router.push("/home");
   };
 
   return (
@@ -58,68 +59,68 @@ const Login = () => {
         source={image.plainbg}
         style={{ position: "absolute", width: "100%", height: "100%" }}
       />
-   
-        <View className="p-6 pt-16 w-full flex-1">
-          <Image source={image.logo} className="mb-8" />
 
-          <View className="flex-1">
-            <Text className="text-2xl font-normal text-general mb-2">
-              Welcome
-            </Text>
-            <Text className="mb-6">
-              Please put your information below to sign in to your account
-            </Text>
+      <View className="p-6 pt-16 w-full flex-1">
+        <Image source={image.logo} className="mb-8" />
 
-            {/* Email Input */}
-            <Controller
-              control={control}
-              name="email"
-              rules={validate.email}
-              render={({ field: { onChange, value } }) => (
-                <CustomInput
-                  title="Email"
-                  placeholder="Enter your email"
-                  value={value}
-                  handlechange={onChange}
-                  error={errors.email?.message}
-                />
-              )}
-            />
+        <View className="flex-1">
+          <Text className="text-2xl font-normal text-general mb-2">
+            Welcome
+          </Text>
+          <Text className="mb-6">
+            Please put your information below to sign in to your account
+          </Text>
 
-            {/* Password Input */}
-            <Controller
-              control={control}
-              name="password"
-              rules={validate.password}
-              render={({ field: { onChange, value } }) => (
-                <CustomInput
-                  title="Password"
-                  placeholder="Enter your password"
-                  value={value}
-                  handlechange={onChange}
-                  error={errors.password?.message}
-                />
-              )}
-            />
-            <View className="flex-row items-center mt-7 justify-between">
-              <View className="flex-row items-center">
-                <Checkbox
-                  value={checked}
-                  onValueChange={setChecked}
-                  color={checked ? "#008543" : "#d9d9d9"}
-                  className={`mr-2`}
-                />
-                <Text>Remember me</Text>
-              </View>
-              <Link
-                href="/forget-password"
-                className="text-base font-normal text-[#C02286]"
-              >
-                Forget Password
-              </Link>
+          {/* Email Input */}
+          <Controller
+            control={control}
+            name="email"
+            rules={validate.email}
+            render={({ field: { onChange, value } }) => (
+              <CustomInput
+                title="Email"
+                placeholder="Enter your email"
+                value={value}
+                handlechange={onChange}
+                error={errors.email?.message}
+              />
+            )}
+          />
+
+          {/* Password Input */}
+          <Controller
+            control={control}
+            name="password"
+            rules={validate.password}
+            render={({ field: { onChange, value } }) => (
+              <CustomInput
+                title="Password"
+                placeholder="Enter your password"
+                value={value}
+                handlechange={onChange}
+                error={errors.password?.message}
+              />
+            )}
+          />
+          <View className="flex-row items-center mt-7 justify-between">
+            <View className="flex-row items-center">
+              <Checkbox
+                value={checked}
+                onValueChange={setChecked}
+                color={checked ? "#008543" : "#d9d9d9"}
+                className={`mr-2`}
+              />
+              <Text>Remember me</Text>
             </View>
+            <Link
+              href="/forget-password"
+              className="text-base font-normal text-[#C02286]"
+            >
+              Forget Password
+            </Link>
           </View>
         </View>
+      </View>
       {/* Submit Button */}
       <View className="p-6">
         <CustomButton
