@@ -61,9 +61,8 @@ const CreateAccount = () => {
   };
 
   return (
-    <KeyboardAvoidingView
+    <View
       style={{ flex: 1 }}
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       <Image
         source={image.plainbg}
@@ -188,7 +187,7 @@ const CreateAccount = () => {
           </View>
         </View>
       </ScrollView>
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 
