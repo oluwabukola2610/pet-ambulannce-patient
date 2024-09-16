@@ -51,9 +51,8 @@ const Login = () => {
   };
 
   return (
-    <KeyboardAvoidingView
+    <View
       style={{ flex: 1 }}
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       <Image
         source={image.plainbg}
@@ -138,7 +137,7 @@ const Login = () => {
           </Link>
         </View>
       </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 
