@@ -5,12 +5,34 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
+  Alert, 
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons"; // For icons
+import { Ionicons } from "@expo/vector-icons"; 
 import { router } from "expo-router";
 
 const Settings = () => {
   const profileImage = "https://via.placeholder.com/150";
+
+  const handleLogout = () => {
+    Alert.alert(
+      "Logout",
+      "Are you sure you want to log out?",
+      [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+        {
+          text: "Logout",
+          onPress: () => {
+            console.log("User logged out");
+            router.push("/login"); 
+          },
+        },
+      ],
+      { cancelable: false }
+    );
+  };
 
   return (
     <SafeAreaView className="flex-1 w-full bg-white">
@@ -23,12 +45,11 @@ const Settings = () => {
           <Text className="text-xl font-bold mt-4">Alicent Hightower</Text>
         </View>
 
-        {/* Settings Options */}
         <View className="mt-5">
           {/* Account Settings */}
           <TouchableOpacity
             onPress={() => router.push("/account")}
-            className="flex-row justify-between items-center px-4 py-6 border-gray-300"
+            className="flex-row justify-between items-center p-4 border-gray-300"
           >
             <View className="flex-row items-center">
               <View className="bg-[#FCE4F7] p-3 rounded-full">
@@ -46,7 +67,7 @@ const Settings = () => {
           {/* Change Password */}
           <TouchableOpacity
             onPress={() => router.push("/edit-password")}
-            className="flex-row justify-between items-center py-6 px-4"
+            className="flex-row justify-between items-center p-4 border-gray-300"
           >
             <View className="flex-row items-center">
               <View className="bg-[#FCE4F7] p-3 rounded-full">
@@ -64,7 +85,7 @@ const Settings = () => {
           {/* Terms and Conditions */}
           <TouchableOpacity
             onPress={() => router.push("/")}
-            className="flex-row justify-between items-center py-6 px-4 mt-4"
+            className="flex-row justify-between items-center p-4 mt-2"
           >
             <View className="flex-row items-center">
               <View className="bg-[#FCE4F7] p-3 rounded-full">
@@ -82,7 +103,7 @@ const Settings = () => {
           {/* History */}
           <TouchableOpacity
             onPress={() => router.push("/")}
-            className="flex-row justify-between items-center py-6 px-4"
+            className="flex-row justify-between items-center p-4 border-gray-300"
           >
             <View className="flex-row items-center">
               <View className="bg-[#FCE4F7] p-3 rounded-full">
@@ -96,7 +117,7 @@ const Settings = () => {
           {/* Support */}
           <TouchableOpacity
             onPress={() => router.push("/")}
-            className="flex-row justify-between items-center py-6 px-4"
+            className="flex-row justify-between items-center p-4 border-gray-300"
           >
             <View className="flex-row items-center">
               <View className="bg-[#FCE4F7] p-3 rounded-full">
@@ -109,6 +130,17 @@ const Settings = () => {
               <Text className="ml-4 text-lg">Support</Text>
             </View>
             <Ionicons name="chevron-forward-outline" size={24} color="gray" />
+          </TouchableOpacity>
+        </View>
+
+        {/* Logout Button */}
+        <View className="p-4 mt-4">
+          <TouchableOpacity
+            onPress={handleLogout}
+            className="flex-row justify-center items-center p-4  rounded-lg"
+          >
+            <Ionicons name="log-out-outline" size={24} color="white" />
+            <Text className="ml-2 text-red-500 text-lg font-medium">Logout</Text>
           </TouchableOpacity>
         </View>
       </View>
