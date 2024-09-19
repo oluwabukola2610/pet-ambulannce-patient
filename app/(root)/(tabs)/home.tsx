@@ -11,6 +11,7 @@ import {
 import { image } from "@/constants";
 import ArticleCard from "@/components/ArticleCard";
 import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 
 const Dashboard = () => {
   const items = [
@@ -37,6 +38,7 @@ const Dashboard = () => {
               alignItems: "center",
               justifyContent: "center",
             }}
+            onPress={()=>router.push("/requestDoc")}
           >
             <Text className="text-white text-lg">Request for a doctor</Text>
           </TouchableOpacity>

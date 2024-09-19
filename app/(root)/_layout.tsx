@@ -6,6 +6,7 @@ export default function Layout() {
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="edit-password" options={{ headerShown: false }} />
       <Stack.Screen name="account" options={{ headerShown: false }} />
+      <Stack.Screen name="requestDoc" options={{ headerShown: false }} />
     </Stack>
   );
 }
