@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import {
   View,
   Image,
-  Text,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
+  Text
 } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { image } from "@/constants";
