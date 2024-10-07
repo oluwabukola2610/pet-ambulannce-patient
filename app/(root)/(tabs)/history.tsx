@@ -6,6 +6,7 @@ import {
   FlatList,
   SafeAreaView,
   Image,
+  Platform,
 } from "react-native";
 
 const appointmentData = [
@@ -40,7 +41,6 @@ const appointmentData = [
 
 const History = () => {
   const [selectedTab, setSelectedTab] = useState("All");
-
   const filteredAppointments = appointmentData.filter((appointment) => {
     if (selectedTab === "All") return true;
     return appointment.status === selectedTab;
@@ -95,7 +95,12 @@ const History = () => {
 
   return (
     <SafeAreaView className="flex-1 bg-white">
-      <View className="flex-row items-center gap-x-4 p-4 my-4">
+      <View
+        className="flex-row items-center gap-x-4 p-4 "
+        style={{
+          marginTop: Platform.OS === "android" ? 60 : 20,
+        }}
+      >
         <Text className="text-xl font-medium">Appointment History</Text>
       </View>
 

@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ScrollView,
+  Platform,
 } from "react-native";
 import { image } from "@/constants";
 import ArticleCard from "@/components/ArticleCard";
@@ -23,22 +24,22 @@ const Dashboard = () => {
 
   return (
     <View className="flex-1 ">
-      <View className="bg-[#028543] h-[300px] p-6 justify-center">
+      <View
+        style={{
+          backgroundColor: "#028543",
+          height: Platform.OS === "android" ? 270 : 300,
+          padding: 24,
+          justifyContent: "center",
+        }}
+      >
         <Text className="text-2xl font-semibold text-white mt-12 leading-10">
           Hey, Alicent!
         </Text>
         <Text className="text-base text-white">Good Morning.</Text>
         <View className="mt-10 items-center">
           <TouchableOpacity
-            style={{
-              backgroundColor: "#C02286",
-              paddingVertical: 12,
-              paddingHorizontal: 20,
-              borderRadius: 20,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            onPress={()=>router.push("/requestDoc")}
+            className="bg-[#C02286] p-3 justify-center rounded-2xl items-center"
+            onPress={() => router.push("/requestDoc")}
           >
             <Text className="text-white text-lg">Request for a doctor</Text>
           </TouchableOpacity>
@@ -46,7 +47,7 @@ const Dashboard = () => {
       </View>
 
       <View className=" rounded-t-[25px] h-full bg-white py-4 -mt-3">
-        <Text className="text-lg p-4 font-medium text-black mt-5">
+        <Text className="text-lg p-4 font-medium text-black mt-4">
           Health Articles
         </Text>
 
