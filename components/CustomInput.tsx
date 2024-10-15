@@ -14,7 +14,6 @@ interface CustomInputProps {
   value?: string;
   keyboardType?: KeyboardTypeOptions | undefined;
   placeholder?: string;
-
   error?: string;
 }
 

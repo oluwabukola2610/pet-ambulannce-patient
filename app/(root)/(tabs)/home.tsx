@@ -1,15 +1,11 @@
 import React from "react";
 import {
   View,
-  Image,
   Text,
   FlatList,
   TouchableOpacity,
-  SafeAreaView,
-  ScrollView,
   Platform,
 } from "react-native";
-import { image } from "@/constants";
 import ArticleCard from "@/components/ArticleCard";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
@@ -48,7 +44,7 @@ const Dashboard = () => {
 
       <View className=" rounded-t-[25px] h-full bg-white py-4 -mt-3">
         <Text className="text-lg p-4 font-medium text-black mt-4">
-          Health Articles
+        Animal Health Articles
         </Text>
 
         <FlatList
@@ -69,7 +65,7 @@ const Dashboard = () => {
             <View className=" rounded-lg p-2 bg-[#C02286] w-[50px] ">
               <Ionicons name="search-sharp" size={28} color="white" />
             </View>
-            <Text className="ml-4 text-base">Request a doctor</Text>
+            <Text className="ml-4 text-base">Request for a Vetenarian</Text>
           </View>
           <View className="flex flex-row items-center ">
             <View className=" rounded-lg p-2 bg-[#C02286] w-[50px] ">
