@@ -84,9 +84,15 @@ const Product = () => {
         columnWrapperStyle={{ justifyContent: "space-between" }}
         ListHeaderComponent={() => (
           <>
-            <View className="px-4 mt-3 mb-2">
+            <View className="px-2 mt-3 mb-2 flex flex-row items-center w-full">
+            <TouchableOpacity
+                onPress={() => router.push("/home")}
+                className="mr-2"
+              >
+                <Ionicons name="arrow-back" size={24} color="black" />
+              </TouchableOpacity>
               <TextInput
-                className="bg-white h-12 rounded-lg px-4"
+                className="bg-white h-12 rounded-lg px-4 w-full"
                 placeholder="Search for an animal..."
                 value={searchText}
                 onChangeText={(text) => setSearchText(text)}
