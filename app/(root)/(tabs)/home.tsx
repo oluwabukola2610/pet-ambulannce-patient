@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  Platform,
-} from "react-native";
+import { View, Text, FlatList, TouchableOpacity, Platform } from "react-native";
 import ArticleCard from "@/components/ArticleCard";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
@@ -23,7 +17,7 @@ const Dashboard = () => {
       <View
         style={{
           backgroundColor: "#028543",
-          height: Platform.OS === "android" ? 270 : 300,
+          height: Platform.OS === "android" ? 250 : 270,
           padding: 24,
           justifyContent: "center",
         }}
@@ -32,7 +26,7 @@ const Dashboard = () => {
           Hey, Alicent!
         </Text>
         <Text className="text-base text-white">Good Morning.</Text>
-        <View className="mt-10 items-center">
+        <View className="mt-6 items-center">
           <TouchableOpacity
             className="bg-[#C02286] p-3 justify-center rounded-2xl items-center"
             onPress={() => router.push("/requestDoc")}
@@ -42,9 +36,9 @@ const Dashboard = () => {
         </View>
       </View>
 
-      <View className=" rounded-t-[25px] h-full bg-white py-4 -mt-3">
-        <Text className="text-lg p-4 font-medium text-black mt-4">
-        Animal Health Articles
+      <View className=" rounded-t-[25px] h-full bg-white py-2 -mt-3">
+        <Text className="text-lg p-4 font-medium text-black mt-2">
+          Animal Health Articles
         </Text>
 
         <FlatList
@@ -57,7 +51,7 @@ const Dashboard = () => {
           style={{ flexGrow: 0 }}
         />
 
-        <View className="p-4 gap-y-4">
+        <View className="p-4 gap-y-3">
           <Text className="text-lg mb-2 font-medium text-black">
             Treat your pets in 3 easy steps
           </Text>
@@ -79,6 +73,14 @@ const Dashboard = () => {
             </View>
             <Text className="ml-4 text-base">Treatment Completed </Text>
           </View>
+        </View>
+        <View className=" flex justify-center items-center">
+          <TouchableOpacity
+            className="bg-[#C02286] p-3 rounded-2xl items-center"
+            onPress={() => router.push("/product")}
+          >
+            <Text className="text-white text-base">View Product Store</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
